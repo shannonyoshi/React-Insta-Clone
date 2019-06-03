@@ -1,16 +1,37 @@
 import React from 'react';
+import './CommentSection.css'
 
-const CommentSection = props =>{
+class CommentSection extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {input: ''};
+    }
+    handleChanges = e => {
+        this.setState({[e.target.name]:e.target.value})
+    }
+
+
+// }
+
+// const CommentSection = props =>{
+    render(){
     return(
         <div className = 'comment-section'>
-            {props.commentArray.map(comment=>(
+            {this.props.commentArray.map(comment=>(
             <div className='comment'>
-            <p>{comment.username}</p>
-            <p>{comment.text}</p>
+            <p className='comment-user'>{comment.username}</p>
+            <p className='comment-text'>{comment.text}</p>
             </div>
             ))}
+            <input
+                type='text'
+                name='input'
+                placeholder='Add a comment...'
+                // onChange={this.handleChanges}
+                // value={this.state.input}
+                />
         </div>
-    )
+    )}
     
 }
 
