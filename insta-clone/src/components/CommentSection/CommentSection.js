@@ -1,5 +1,6 @@
 import React from 'react';
 import './CommentSection.css'
+import PropTypes from 'prop-types';
 
 class CommentSection extends React.Component {
     constructor(props) {
@@ -10,10 +11,6 @@ class CommentSection extends React.Component {
         this.setState({[e.target.name]:e.target.value})
     }
 
-
-// }
-
-// const CommentSection = props =>{
     render(){
     return(
         <div className = 'comment-section'>
@@ -35,5 +32,12 @@ class CommentSection extends React.Component {
     
 }
 
+CommentSection.propTypes = {
+    commentArray: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number,
+        text: PropTypes.string,
+        useraname: PropTypes.string,
+    }))
 
+}
 export default CommentSection
