@@ -1,6 +1,5 @@
 import React from 'react';
-import './SearchBar.css'
-import PostsContainer from '../PostContainer/PostsContainer'
+import './SearchBar.css';
 
 // class SearchBar extends React.Component{
     // constructor(props){

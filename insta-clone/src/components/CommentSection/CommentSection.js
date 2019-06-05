@@ -12,32 +12,28 @@ class CommentSection extends React.Component {
     }
     handleChanges = e =>{
         this.setState({
-            input:e.target.value
+            [e.target.name]:e.target.value
         })
     }
 
-    // addComment=(e, inputText)=>{
-    //     e.preventDefault();
-    //     const newComment ={
-    //       id: this.props.commentArray.length,
-    //       username: 'anonymous',
-    //       text: inputText
-    //     };
-    //     this.setState({
-    //       commentArray:[...this.state.commentArray, newComment]
-    //     })
-    //   }
-
-
-    submitComment = e => {
-        this.props.addComment(e, this.state.input)
-        this.setState({input: 'Add a comment...'})
+    addComment=(e)=>{
+        e.preventDefault();
+        const newComment ={
+          id: Date.now(),
+          username: 'anonymous',
+          text: this.state.input
+        };
+        this.setState({
+          comments:[...this.state.comments, newComment], 
+          input: ''
+        })
     }
 
+    //comments are being added to state, but not rerendering
     render(){
     return(
         <div className = 'comment-section'>
-            {this.props.commentArray.map(comment=>(
+            {this.state.comments.map(comment=>(
                 <Comment comment = {comment} key = {comment.id} />
             ))}
             <form onSubmit={this.addComment}>

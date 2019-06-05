@@ -42,7 +42,9 @@ class App extends React.Component {
         key={this.state.data.id} 
         filteredResults = {this.filterResults}
       />
-      <PostsContainer posts = {this.state.filtered.length>0? this.state.filtered : this.state.data} />
+      <PostsContainer 
+        posts = {this.state.filtered.length>0? this.state.filtered : this.state.data} 
+      />
     </div>
     );
   }
