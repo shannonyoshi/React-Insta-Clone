@@ -1,0 +1,19 @@
+.search-bar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.search-bar .fab{
+    font-size:2em;
+    padding: 0.25em;
+    border:1px solid green;
+
+}
+.search-left{
+    display:inline-flex;
+}
+.brand{
+    padding:.25em;
+    border:1px solid black;
+}
