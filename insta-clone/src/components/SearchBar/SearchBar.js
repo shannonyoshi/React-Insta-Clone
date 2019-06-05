@@ -1,37 +1,25 @@
 import React from 'react';
 import './SearchBar.css'
-import PostContainer from '../PostContainer/PostContainer'
+import PostsContainer from '../PostContainer/PostsContainer'
 
-class SearchBar extends React.Component{
-    constructor(props){
-        super(props);
-            this.state = {
-                data : this.props,
-                filtered: []
-            }
-    }
-    componentDidMount(){
-        this.setState({filtered:this.data})
-    }
-    componentWillReceiveProps(nextProps){
-        this.setState({filtered:nextProps.data})
-    }
-    handleChange = e => {
-        let currentPosts =[];
-        let filteredPosts=[];
-        if (e.target.value !== ''){
-            currentPosts = this.props.data;
-            filteredPosts = currentPosts.filter(item=>{
-                const lcUsername= item.username.toLowerCase();
-                const filter = e.target.value.toLowerCase();
-                return lcUsername.includes(filter);
-            })
-        } else{
-            filteredPosts = this.props.data;
-        }
-        this.setState({filtered: filteredPosts})
-    }
-    render(){
+// class SearchBar extends React.Component{
+    // constructor(props){
+    //     super(props);
+    //         this.state = {
+    //             data : this.props,
+    //             filtered: []
+    //         }
+    // }
+    // componentDidMount(){
+    //     this.setState({filtered:this.data})
+    // }
+    // componentWillReceiveProps(nextProps){
+    //     this.setState({filtered:nextProps.data})
+    // }
+
+    // render(){
+
+    const SearchBar = props=>{
         return(
             <div>
                 <div className='search-bar'>
@@ -44,7 +32,7 @@ class SearchBar extends React.Component{
                         type='text'
                         className='input'
                         placeholder='&#xf002; search'
-                        onChange={this.handleChange}
+                        onChange={props.filteredResults}
                     />
                     <div className='search-right'>
                         <i className = 'far fa-compass'/>
@@ -52,11 +40,11 @@ class SearchBar extends React.Component{
                         <i className='far fa-user' />
                     </div>
                 </div>
-                {this.state.filtered.map(item=>(
-                <PostContainer post = {item} key={item.id}/>
-                ))}
+                {/* {this.state.filtered.map(item=>(
+                <PostsContainer post = {item} key={item.id}/>
+                ))} */}
             </div>
         )
     }
-}
+// }
 export default SearchBar;

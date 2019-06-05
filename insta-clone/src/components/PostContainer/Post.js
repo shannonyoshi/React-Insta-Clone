@@ -1,10 +1,9 @@
 import React from 'react';
 import CommentSection from '../CommentSection/CommentSection';
-import './PostContainer.css'
 
-const PostContainer = props =>{
+const Post = props =>{
     return(
-        <div className='post-container'>
+        <div>
             <div className='user-info'>
                 <img src={props.post.thumbnailUrl} alt='user thumbnail' className='user-thumbnail'/>
                 <p className='user-name'>{props.post.username}</p>
@@ -20,4 +19,4 @@ const PostContainer = props =>{
     )
 }
 
-export default PostContainer;
+export default Post;

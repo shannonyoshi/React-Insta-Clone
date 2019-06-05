@@ -1,11 +1,14 @@
 import React from 'react';
+import Comment from './Comment';
 import './CommentSection.css'
 import PropTypes from 'prop-types';
 
 class CommentSection extends React.Component {
-    constructor(commentArray) {
-        super(commentArray);
-        this.state = {commentArray, input: ''};
+    constructor(props) {
+        super(props);
+        this.state = {
+            comments: props.comments,
+            input: ''};
     }
     handleChanges = e =>{
         this.setState({
@@ -34,12 +37,8 @@ class CommentSection extends React.Component {
     render(){
     return(
         <div className = 'comment-section'>
-        {/* {console.log(this.state.commentArray)} */}
             {this.props.commentArray.map(comment=>(
-            <div className='comment'>
-                <p className='comment-user'>{comment.username}</p>
-                <p className='comment-text'>{comment.text}</p>
-            </div>
+                <Comment comment = {comment} key = {comment.id} />
             ))}
             <form onSubmit={this.addComment}>
                 <input
