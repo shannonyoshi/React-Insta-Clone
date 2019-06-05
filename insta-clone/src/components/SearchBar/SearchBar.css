@@ -2,18 +2,22 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
+    max-width:600px;
+    margin:auto;
 }
 
-.search-bar .fab{
+.fa-instagram{
     font-size:2em;
     padding: 0.25em;
-    border:1px solid green;
-
+    height:1em;
+    margin:auto;
 }
 .search-left{
     display:inline-flex;
 }
 .brand{
-    padding:.25em;
-    border:1px solid black;
+    height:1em;
+    margin:auto;
 }
+    
+

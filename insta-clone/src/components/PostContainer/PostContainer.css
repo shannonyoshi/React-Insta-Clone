@@ -1,12 +1,8 @@
-.posts-container{
-    display:flex;
-    flex-wrap: wrap;
-}
 
 .post-container{
     width: 95vw;
     border: 1px solid lightgray;
-    margin:auto;
+    margin:20px auto;
     max-width: 500px;
 }
 
@@ -22,23 +18,33 @@
 
 .user-thumbnail{
     border-radius:50%;
-    width: 4em;
-    height:4em;
-    padding:2em;
+    width: 2em;
+    height:2em;
+    padding:.5em;
 }
 
 .user-name{
     font-weight:bold;
-    font-size:1.5em;
+    font-size:.75em;
 }
 
 .far{
-    font-size:2em;
-    padding:.5em;
+    font-size:1.5em;
+    padding:.25em;
 }
 /* liked icon */
 .fas{
-    font-size:2em;
-    padding:.5em;
+    font-size:1.5em;
+    padding:.25em;
     color: red;
+}
+
+.bottom-content{
+    padding: 0px 1em;
+    font-size:.85em;
+}
+
+.likes{
+    font-weight:500;
+    margin: 5px 0px;
 }
