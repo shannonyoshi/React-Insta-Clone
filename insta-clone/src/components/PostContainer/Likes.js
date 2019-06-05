@@ -21,7 +21,7 @@ class Likes extends React.Component{
         return(
             <>
             <div className ='Likes'>
-                <i className='far fa-heart' onClick={this.likePost}/>
+                <i className={this.state.liked===true? 'fas fa-heart liked': 'far fa-heart'} onClick={this.likePost}/>
                 <i className='far fa-comment' />
             </div> 
             <b className='likes'>{this.state.likes} likes</b>

@@ -1,3 +1,20 @@
+.posts-container{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.post-container{
+    width: 95vw;
+    border: 1px solid lightgray;
+    margin:auto;
+    max-width: 500px;
+}
+
+.post-image{
+    width:98%;
+    padding:1%;
+
+}
 .user-info{
     display:flex;
     align-items:center;
@@ -14,7 +31,14 @@
     font-weight:bold;
     font-size:1.5em;
 }
+
 .far{
     font-size:2em;
     padding:.5em;
+}
+/* liked icon */
+.fas{
+    font-size:2em;
+    padding:.5em;
+    color: red;
 }
