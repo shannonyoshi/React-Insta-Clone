@@ -1,4 +1,7 @@
 import React from "react";
+import {FaHeart} from 'react-icons/fa';
+import {FaRegHeart} from 'react-icons/fa';
+import {FaRegComment} from 'react-icons/fa';
 
 class Likes extends React.Component {
   constructor(props) {
@@ -21,13 +24,8 @@ class Likes extends React.Component {
     return (
       <>
         <div className="Likes">
-          <i
-            className={
-              this.state.liked === true ? "fas fa-heart liked" : "far fa-heart"
-            }
-            onClick={this.likePost}
-          />
-          <i className="far fa-comment" />
+          {this.state.liked===true ? <FaHeart style= {{color:"red"}} onClick={this.likePost} className="likes-icons" /> : <FaRegHeart onClick={this.likePost} className="likes-icons"/>}
+          <FaRegComment className="likes-icons"/>
         </div>
         <p className="likes">{this.state.likes} likes</p>
       </>

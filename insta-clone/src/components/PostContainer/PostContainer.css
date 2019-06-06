@@ -28,15 +28,9 @@
     font-size:.75em;
 }
 
-.far{
+.likes-icons{
     font-size:1.5em;
     padding:.25em;
-}
-/* liked icon */
-.fas{
-    font-size:1.5em;
-    padding:.25em;
-    color: red;
 }
 
 .bottom-content{

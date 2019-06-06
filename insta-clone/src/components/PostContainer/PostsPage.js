@@ -15,6 +15,9 @@ class PostsPage extends React.Component {
   componentDidMount() {
     this.setState({ data: dummyData });
   }
+
+  filterById = e => {};
+
   filterResults = e => {
     let currentPosts = [];
     let filteredPosts = [];
@@ -62,4 +65,26 @@ PostsPage.propTypes = {
   })
 };
 
+const filterById = filter(filterById, id, letter)
+
+const filter = (functionName, filterArg, filterMatch) => {
+  functionName = e => {
+    if (filterArg !== "") {
+      filteredPosts = this.state.data.filter(item => {
+        if (typeof filterArg === "string") {
+          return item.filterMatch
+            .toLowerCase()
+            .includes(filterArg.toLowerCase());
+        } else {
+          return item.filterMatch.includes(filterArg);
+        }
+      });
+    } else {
+      filteredPosts = this.state.data;
+    }
+    this.setState({ filtered: filtered });
+  };
+};
+
 export default PostsPage;
+

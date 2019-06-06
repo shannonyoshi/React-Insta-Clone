@@ -11,6 +11,7 @@ class CommentSection extends React.Component {
       input: ""
     };
   }
+
   handleChanges = e => {
     this.setState({
       [e.target.name]: e.target.value
@@ -21,7 +22,7 @@ class CommentSection extends React.Component {
     e.preventDefault();
     const newComment = {
       id: Date.now(),
-      username: "anonymous",
+      username: JSON.parse(localStorage.getItem("user")),
       text: this.state.input
     };
     this.setState({

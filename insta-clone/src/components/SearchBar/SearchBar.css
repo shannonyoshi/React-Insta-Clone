@@ -6,7 +6,11 @@
     margin:auto;
 }
 
-.fa-instagram{
+.search-bar .input{
+    padding: .5em;
+}
+
+.instagram-icon{
     font-size:2em;
     padding: 0.25em;
     height:1em;
@@ -15,9 +19,16 @@
 .search-left{
     display:inline-flex;
 }
-.brand{
-    height:1em;
+.logo-text{
+    width:120px;
+    height:40px;
     margin:auto;
+    border-left: 1px solid black;
+    padding-top:5px;
 }
     
-
+.search-icons{
+    font-weight:200;
+    font-size:1.5em;
+    padding:.25em;
+}
