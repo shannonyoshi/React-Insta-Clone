@@ -1,4 +1,22 @@
 import React from "react";
+import styled from "styled-components";
+import { Input } from "../JSstyles";
+import { UserPic } from "../JSstyles";
+import { Button } from '../JSstyles'; 
+
+const FormWrapper = styled.form`
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  align-items: center;
+  border: 1px solid lightgray;
+  margin:20vh auto;
+  box-shadow: 0px 0px 5px lightgray;
+`;
+
+const BgDiv = styled.div`
+  background-color: rgba(245,245,245,.7)`;
+
 
 class Login extends React.Component {
   constructor(props) {
@@ -21,24 +39,25 @@ class Login extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.loginUser}>
-        <h1>Log In to Insta Clone</h1>
-        <input
-          type="text"
-          name="username"
-          placeholder="Username"
-          onChange={this.handleChanges}
-          value={this.state.username}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          onChange={this.handleChanges}
-          value={this.state.password}
-        />
-        <button>Log In</button>
-      </form>
+        <FormWrapper onSubmit={this.loginUser}>
+          <h2>Log In to Insta Clone</h2>
+          <UserPic src="../../shannon.JPG" alt="Shannon profile pic" large />
+          <Input mediumWide
+            type="text"
+            name="username"
+            placeholder="Username"
+            onChange={this.handleChanges}
+            value={this.state.username}
+          />
+          <Input mediumWide
+            type="password"
+            name="password"
+            placeholder="Password"
+            onChange={this.handleChanges}
+            value={this.state.password}
+          />
+          <Button>Log In</Button>
+        </FormWrapper>
     );
   }
 }
