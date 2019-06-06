@@ -1,7 +1,13 @@
 import React from "react";
-import {FaHeart} from 'react-icons/fa';
-import {FaRegHeart} from 'react-icons/fa';
-import {FaRegComment} from 'react-icons/fa';
+import { FaHeart } from "react-icons/fa";
+import { FaRegHeart } from "react-icons/fa";
+import { FaRegComment } from "react-icons/fa";
+import styled from 'styled-components';
+
+const NumOfLikes = styled.p`
+  font-weight: 500;
+  margin: 5px 0px;
+`;
 
 class Likes extends React.Component {
   constructor(props) {
@@ -12,6 +18,7 @@ class Likes extends React.Component {
       liked: false
     };
   }
+
   likePost = e => {
     if (this.state.liked === false) {
       this.setState({ likes: this.state.likes + 1, liked: true });
@@ -23,11 +30,19 @@ class Likes extends React.Component {
   render() {
     return (
       <>
-        <div className="Likes">
-          {this.state.liked===true ? <FaHeart style= {{color:"red"}} onClick={this.likePost} className="likes-icons" /> : <FaRegHeart onClick={this.likePost} className="likes-icons"/>}
-          <FaRegComment className="likes-icons"/>
+        <div>
+          {this.state.liked === true ? (
+            <FaHeart
+              style={{ color: "red" }}
+              onClick={this.likePost}
+              className="likes-icons"
+            />
+          ) : (
+            <FaRegHeart onClick={this.likePost} className="likes-icons" />
+          )}
+          <FaRegComment className="likes-icons" />
         </div>
-        <p className="likes">{this.state.likes} likes</p>
+        <NumOfLikes>{this.state.likes} likes</NumOfLikes>
       </>
     );
   }

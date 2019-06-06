@@ -1,7 +1,7 @@
 import React from "react";
-import Comment from "./Comment";
-import "./CommentSection.css";
+import SingleComment from "./Comment";
 import PropTypes from "prop-types";
+import { Input } from '../JSstyles';
 
 class CommentSection extends React.Component {
   constructor(props) {
@@ -35,16 +35,15 @@ class CommentSection extends React.Component {
     return (
       <div className="comment-section">
         {this.state.comments.map(comment => (
-          <Comment comment={comment} key={comment.id} />
+          <SingleComment comment={comment} key={comment.id} />
         ))}
         <form onSubmit={this.addComment}>
-          <input
+          <Input wide
             type="text"
             name="input"
             placeholder="Add a comment..."
             onChange={this.handleChanges}
             value={this.state.input}
-            className="comment-input"
           />
         </form>
       </div>

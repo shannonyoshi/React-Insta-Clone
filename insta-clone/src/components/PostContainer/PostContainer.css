@@ -1,44 +1,4 @@
-
-.post-container{
-    width: 95vw;
-    border: 1px solid lightgray;
-    margin:20px auto;
-    max-width: 500px;
-}
-
-.post-image{
-    width:98%;
-    padding:1%;
-
-}
-.user-info{
-    display:flex;
-    align-items:center;
-}
-
-.user-thumbnail{
-    border-radius:50%;
-    width: 2em;
-    height:2em;
-    padding:.5em;
-}
-
-.user-name{
-    font-weight:bold;
-    font-size:.75em;
-}
-
 .likes-icons{
     font-size:1.5em;
     padding:.25em;
-}
-
-.bottom-content{
-    padding: 0px 1em;
-    font-size:.85em;
-}
-
-.likes{
-    font-weight:500;
-    margin: 5px 0px;
 }
