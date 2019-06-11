@@ -1,13 +1,24 @@
-import React from 'react';
+import React from "react";
+import styled from 'styled-components';
+import { Username } from "../JSstyles";
 
-const Comment = props=>{
-    return(
-        <div className='comment'>
-            <p className='comment-user'>{props.comment.username}</p>
-            <p className='comment-text'>{props.comment.text}</p>
-        </div>
-    )
-}
+const AComment = styled.div`
+  display: flex;
+  align-items: flex-start;
+  margin: 10px 0px;
+`;
 
+const CommentText = styled.p`
+  padding-left: 5px;
+`;
 
-export default Comment;
+const SingleComment = props => {
+  return (
+    <AComment>
+      <Username>{props.comment.username}</Username>
+      <CommentText>{props.comment.text}</CommentText>
+    </AComment>
+  );
+};
+
+export default SingleComment;

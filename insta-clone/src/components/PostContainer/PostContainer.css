@@ -1,20 +1,4 @@
-.user-info{
-    display:flex;
-    align-items:center;
-}
-
-.user-thumbnail{
-    border-radius:50%;
-    width: 4em;
-    height:4em;
-    padding:2em;
-}
-
-.user-name{
-    font-weight:bold;
+.likes-icons{
     font-size:1.5em;
-}
-.far{
-    font-size:2em;
-    padding:.5em;
+    padding:.25em;
 }

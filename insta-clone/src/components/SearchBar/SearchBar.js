@@ -1,49 +1,57 @@
-import React from 'react';
-import './SearchBar.css';
+import React from "react";
+import "./SearchBar.css";
+import logo from "../../logo-text.png";
+import { FaInstagram } from "react-icons/fa";
+import { FaRegCompass } from "react-icons/fa";
+import { FaRegHeart } from "react-icons/fa";
+import { FaRegUser } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
+import styled, { css } from "styled-components";
+import { Input } from "../JSstyles";
 
-// class SearchBar extends React.Component{
-    // constructor(props){
-    //     super(props);
-    //         this.state = {
-    //             data : this.props,
-    //             filtered: []
-    //         }
-    // }
-    // componentDidMount(){
-    //     this.setState({filtered:this.data})
-    // }
-    // componentWillReceiveProps(nextProps){
-    //     this.setState({filtered:nextProps.data})
-    // }
+const SearchDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 600px;
+  margin: auto;
+`;
 
-    // render(){
+const LogoHeader = styled.div`
+  display: inline-flex;
+`;
 
-    const SearchBar = props=>{
-        return(
-            <div>
-                <div className='search-bar'>
-                    <div className = 'search-left'>
-                        <i className = 'fab fa-instagram'/>
-                        <h2 className = 'brand'>Instagram</h2>
-                    </div>
+const LogoText = styled.img`
+  width: 120px;
+  height: 40px;
+  margin: auto;
+  border-left: 1px solid black;
+  padding-top: 5px;
+`;
 
-                    <input 
-                        type='text'
-                        className='input'
-                        placeholder='&#xf002; search'
-                        onChange={props.filteredResults}
-                    />
-                    <div className='search-right'>
-                        <i className = 'far fa-compass'/>
-                        <i className='far fa-heart' />
-                        <i className='far fa-user' />
-                    </div>
-                </div>
-                {/* {this.state.filtered.map(item=>(
-                <PostsContainer post = {item} key={item.id}/>
-                ))} */}
-            </div>
-        )
-    }
-// }
+const SearchBar = props => {
+  return (
+    <SearchDiv>
+      <LogoHeader>
+        <FaInstagram className="instagram-icon" />
+        <LogoText src={logo} alt="Instagram Logo" />
+      </LogoHeader>
+      <div className="search-input">
+        <Input
+          type="text"
+          className="input"
+          placeholder="&#xf002; search"
+          onChange={props.filteredResults}
+        />
+        <FaSearch className="search-icon" />
+      </div>
+      <div className="search-right">
+        <FaRegCompass className="search-icons" />
+        <FaRegHeart className="search-icons" />
+        <FaRegUser className="search-icons" />
+      </div>
+    </SearchDiv>
+  );
+};
+
 export default SearchBar;
